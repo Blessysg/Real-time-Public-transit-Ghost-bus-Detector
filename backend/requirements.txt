@@ -1,1 +1,6 @@
+fastapi
+uvicorn
+redis
+gtfs-realtime-bindings
+aiohttp
 
