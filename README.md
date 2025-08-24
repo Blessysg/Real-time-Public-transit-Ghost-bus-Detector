@@ -29,3 +29,8 @@ Open your browser and go to: http://localhost:8000/health → you should see:
 
 Also check the automatic API docs at: http://localhost:8000/docs
 
+# How to run with Docker Desktop (no terminal fancy stuff):
+Open Docker Desktop.
+Click + Add → Create from compose file → select backend\docker-compose.yml.
+Click Up.
+Open http://localhost:8000/health → should show {"status":"ok"}.
