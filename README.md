@@ -10,17 +10,17 @@ If not, type (copy-paste is okay):
 Then go into backend:
   cd .\backend\
 
-Create a virtual environment
+Create a virtual environment:
   python -m venv .venv
 
-Activate it (PowerShell)
+Activate it (PowerShell):
   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
   .\.venv\Scripts\Activate.ps1
 
-Install the packages
+Install the packages:
   python -m pip install -r requirements.txt
 
-Run the API locally
+Run the API locally:
   python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 # How to test it
