@@ -1,17 +1,17 @@
-FROM python:3.11-slim
+# Use official Python image
+FROM python:3.10-slim
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
+# Set working directory
 WORKDIR /app
 
-# copy requirements first (better layer caching)
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# Copy backend code
+COPY ./backend /app
 
-# copy the app code
-COPY app /app/app
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Expose backend port
 EXPOSE 8000
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
+# Start the FastAPI server
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
